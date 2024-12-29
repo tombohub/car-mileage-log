@@ -1,24 +1,18 @@
-# README
+# PhoenixWeb
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To start your Phoenix server:
 
-Things you may want to cover:
+  * Run `mix setup` to install and setup dependencies
+  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
-* Ruby version
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-* System dependencies
+Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
-* Configuration
+## Learn more
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  * Official website: https://www.phoenixframework.org/
+  * Guides: https://hexdocs.pm/phoenix/overview.html
+  * Docs: https://hexdocs.pm/phoenix
+  * Forum: https://elixirforum.com/c/phoenix-forum
+  * Source: https://github.com/phoenixframework/phoenix
