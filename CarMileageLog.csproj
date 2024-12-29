@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-CarMileageLog-213bd699-7053-4087-a452-d5c1f0861ab4</UserSecretsId>
