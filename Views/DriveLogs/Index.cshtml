@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CarMileageLog.Data.Models.DriveLog>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (TempData["SuccessMessage"] != null){
+    <div class="alert alert-success" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<span>Drive Logs</span> <a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus"></i></a>
+<hr />
+
+<div class="vstack gap-3">
+    @foreach (var driveLog in Model)
+    {
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title hstack">
+                    <h6>@Html.DisplayFor(x => driveLog.Date)</h6>
+                </div>
+                <div class="card-text hstack">
+                    <div class="vstack">
+                        <span>@Html.DisplayNameFor(x => driveLog.StartKilometers)</span>
+                        @driveLog.StartKilometers
+                    </div>
+                    <div class="vstack">
+                        <span>@Html.DisplayNameFor(x => driveLog.EndKilometers)</span>
+                        @driveLog.EndKilometers
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer d-flex gap-2">
+                <a asp-action="Edit" asp-route-id="@driveLog.Id" class="btn btn-primary flex-fill"><i class="bi bi-pen"></i></a>
+                <a asp-action="Delete" asp-route-id="@driveLog.Id" class="btn btn-danger flex-fill"><i class="bi bi-trash"></i></a>
+            </div>
+        </div>
+    }
+</div>

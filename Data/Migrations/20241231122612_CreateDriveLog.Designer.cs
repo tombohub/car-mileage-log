@@ -3,6 +3,7 @@ using System;
 using CarMileageLog.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CarMileageLog.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241231122612_CreateDriveLog")]
+    partial class CreateDriveLog
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,7 +38,7 @@ namespace CarMileageLog.Data.Migrations
                         .HasColumnType("date")
                         .HasColumnName("date");
 
-                    b.Property<int?>("EndKilometers")
+                    b.Property<int>("EndKilometers")
                         .HasColumnType("integer")
                         .HasColumnName("end_kilometers");
 
@@ -46,11 +49,6 @@ namespace CarMileageLog.Data.Migrations
                     b.Property<int>("StartKilometers")
                         .HasColumnType("integer")
                         .HasColumnName("start_kilometers");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("status");
 
                     b.HasKey("Id")
                         .HasName("pk_drive_logs");

@@ -1,0 +1,17 @@
+﻿@model JobSite
+
+Do you want to delete this job site?
+
+<h3>
+    @Model.Name
+</h3>
+<p>
+    @Model.Address
+</p>
+
+<form asp-action="DeleteConfirmed">
+    <div class="d-grid">
+        <input type="hidden" asp-for="@Model.Id"/>
+        <button class="btn btn-danger">Delete</button>
+    </div>
+</form>

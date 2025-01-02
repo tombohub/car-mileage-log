@@ -1,4 +1,4 @@
-namespace CarMileageLog.Models
+namespace CarMileageLog.ViewModels
 {
     public class ErrorViewModel
     {
