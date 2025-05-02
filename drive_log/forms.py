@@ -16,8 +16,15 @@ class StartDriveForm(forms.ModelForm):
         widgets = {"date": forms.DateInput(attrs={"type": "date"})}
 
 
-class EndDriveForm(forms.Form):
-    end_km = forms.IntegerField()
+class EndDriveForm(forms.ModelForm):
+    class Meta:
+        model = DriveLog
+        fields = ["end_km", "status"]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.initial["status"] = DriveLog.DriveStatus.COMPLETED
+        self.fields["status"].widget = forms.HiddenInput()
 
 
 class JobSiteForm(forms.ModelForm):

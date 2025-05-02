@@ -17,6 +17,7 @@ Including another URLconf
 
 import os
 
+from debug_toolbar.toolbar import debug_toolbar_urls
 from django.contrib import admin
 from django.urls import include, path
 
@@ -24,7 +25,7 @@ urlpatterns = [
     path("", include("drive_log.urls")),
     path("admin/", admin.site.urls),
     path("__reload__/", include("django_browser_reload.urls")),
-]
+] + debug_toolbar_urls()
 
 # Conditionally include django_browser_reload URLs if APP_ENV is dev
 if os.getenv("APP_ENV") == "dev":
